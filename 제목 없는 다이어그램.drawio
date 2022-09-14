@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-09-14T03:58:24.839Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="L9BDDfmEYSsCnnnBg62z" version="20.3.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-14T03:59:39.429Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="Zf3UwNf7yQ9-38ivdEOs" version="20.3.0" type="github">
   <diagram id="rF-ODt5VXvoeSUjKaoO6" name="페이지-1">
-    <mxGraphModel dx="813" dy="442" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -60,6 +60,9 @@
         </mxCell>
         <mxCell id="5TmPcpbyKbSHmxEddl_H-3" value="로그인 실패" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
           <mxGeometry x="460" y="430" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5TmPcpbyKbSHmxEddl_H-6" value="DB" style="html=1;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="670" y="370" width="130" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
