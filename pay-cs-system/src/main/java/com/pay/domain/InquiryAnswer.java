@@ -6,6 +6,11 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -24,14 +29,29 @@ import java.util.Objects;
 public class InquiryAnswer {
 
     @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     @Setter
     @ManyToOne(optional = false)
     private Inquiry inquiry; // 해당문의
     @Setter
     @OneToOne(optional = false)
     private Counselor counselor; // 상담사
+
+    @Column
+    private String contents; // 답변 내용
+    @CreatedDate
+    private LocalDateTime createAt; // 생성일
+    @LastModifiedDate
+    private LocalDateTime updateAt; // 수정일
+    
+
     @Column(nullable = false)
     private String contents; // 답변 내용
     @CreatedDate
@@ -65,4 +85,5 @@ public class InquiryAnswer {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }
