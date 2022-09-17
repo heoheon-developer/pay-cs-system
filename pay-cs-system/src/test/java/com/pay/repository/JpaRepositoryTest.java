@@ -2,6 +2,7 @@ package com.pay.repository;
 
 import com.pay.config.JpaConfig;
 import com.pay.domain.Inquiry;
+import com.pay.enums.InquiryStatus;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ class JpaRepositoryTest {
         long previousCount = inquiryRepository.count();
 
          // When
-        Inquiry savedInquiry = inquiryRepository.save(Inquiry.of("heoheon", "test","test",0));
+        Inquiry savedInquiry = inquiryRepository.save(Inquiry.of("heoheon", "test","test", InquiryStatus.INQUIRY_WATTING));
 
         // Then
         assertThat(inquiryRepository.count()).isEqualTo(previousCount + 1);
@@ -61,7 +62,7 @@ class JpaRepositoryTest {
     void givenTestData_whenUpdate_thenWorksFine(){
 
         // Given
-        Inquiry savedInquiry = inquiryRepository.save(Inquiry.of("heoheon","test","test", 0));
+        Inquiry savedInquiry = inquiryRepository.save(Inquiry.of("heoheon","test","test", InquiryStatus.INQUIRY_WATTING));
         Inquiry inquiryUpdate = inquiryRepository.findById(savedInquiry.getId()).orElseThrow();
         String updateTitle = "제목변경";
         inquiryUpdate.setTitle(updateTitle);
