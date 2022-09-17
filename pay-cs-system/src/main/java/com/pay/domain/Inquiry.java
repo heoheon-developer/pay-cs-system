@@ -20,14 +20,14 @@ import java.util.Set;
         @Index(columnList = "customerId"),
         @Index(columnList = "title"),
         @Index(columnList = "contents"),
-        @Index(columnList = "createAt")
+        @Index(columnList = "regDate")
 })
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 public class Inquiry {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String customerId; // 고객 ID
     @Setter
@@ -44,26 +44,26 @@ public class Inquiry {
 
     @Setter
     @Column(nullable = false)
-    private Integer inquiryStatus; // 문의 상태
+    private Integer status; // 문의 상태
     @CreatedDate
     @Column(nullable = false)
-    private LocalDateTime createAt; // 생성일
+    private LocalDateTime regDate; // 생성일
     @LastModifiedDate
     @Column(nullable = false)
-    private LocalDateTime updateAt; // 수정일
+    private LocalDateTime updateDate; // 수정일
 
     protected Inquiry(){
     }
 
-    private Inquiry(String customerId, String title, String contents, Integer inquiryStatus) {
+    private Inquiry(String customerId, String title, String contents, Integer status) {
         this.customerId = customerId;
         this.title = title;
         this.contents = contents;
-        this.inquiryStatus = inquiryStatus;
+        this.status = status;
     }
 
-    public static Inquiry of(String customerId, String title, String contents, Integer inquiryStatus){
-        return new Inquiry(customerId, title, contents, inquiryStatus);
+    public static Inquiry of(String customerId, String title, String contents, Integer status){
+        return new Inquiry(customerId, title, contents, status);
     }
 
     @Override

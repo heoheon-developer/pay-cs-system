@@ -32,7 +32,7 @@ class JpaRepositoryTest {
     @Test
     void givenTestData_whenSelect_thenWorksFine(){
         // given
-        inquiryRepository.save(Inquiry.of("heoheon","test","test", 0));
+        // data.sql 에 데이터를 사전에 입력
 
         // when
         List<Inquiry> inquiryList = inquiryRepository.findAll();

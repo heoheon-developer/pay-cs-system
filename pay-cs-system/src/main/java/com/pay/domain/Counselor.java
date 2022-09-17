@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,11 +14,12 @@ import java.time.LocalDateTime;
 
 @Getter
 @ToString
+@EntityListeners(AuditingEntityListener.class)
 @Entity
 public class Counselor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Setter
     @Column(nullable = false)
@@ -29,8 +31,22 @@ public class Counselor {
     @Column(nullable = false)
     private String counselorName; // 상담사 이름
     @CreatedDate
-    private LocalDateTime createAt; // 생성일
+    @Column(nullable = false)
+    private LocalDateTime regDate; // 생성일
     @LastModifiedDate
-    private LocalDateTime updateAt; // 수정일
+    @Column(nullable = false)
+    private LocalDateTime updateDate; // 수정일
 
+    protected Counselor() {
+    }
+
+    public Counselor(String counselorId, String counselorPassword, String counselorName) {
+        this.counselorId = counselorId;
+        this.counselorPassword = counselorPassword;
+        this.counselorName = counselorName;
+    }
+
+    public static Counselor of(String counselorId, String counselorPassword, String counselorName) {
+        return new Counselor(counselorId, counselorPassword, counselorName);
+    }
 }

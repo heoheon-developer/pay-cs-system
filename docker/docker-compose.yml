@@ -1,0 +1,16 @@
+version: '3' # docker compose 버전 
+services:
+  local-db:
+    image: library/mysql:5.7
+    container_name: subway_local # 컨테이너 이름
+    restart: always
+    ports:
+      - 3306:3306 # 로컬의 13306 포트를 컨테이너의 3306포트로 연결
+    environment:
+      MYSQL_USER: kakaopay
+      MYSQL_PASSWORD: kakaopay!
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Seoul
+    volumes:
+      - ./db/mysql/data:/var/lib/mysql
+      - ./db/mysql/init:/docker-entrypoint-initdb
