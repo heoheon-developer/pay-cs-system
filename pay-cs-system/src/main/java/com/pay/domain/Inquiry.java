@@ -29,6 +29,8 @@ public class Inquiry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Setter
+    @Column(nullable = false)
     private String customerId; // 고객 ID
     @Setter
     @Column(nullable = false)
@@ -44,7 +46,7 @@ public class Inquiry {
 
     @Setter
     @Column(nullable = false)
-    private Integer status; // 문의 상태
+    private InquiryStatus status; // 문의 상태
     @CreatedDate
     @Column(nullable = false)
     private LocalDateTime regDate; // 생성일
@@ -55,14 +57,14 @@ public class Inquiry {
     protected Inquiry(){
     }
 
-    private Inquiry(String customerId, String title, String contents, Integer status) {
+    private Inquiry(String customerId, String title, String contents, InquiryStatus status) {
         this.customerId = customerId;
         this.title = title;
         this.contents = contents;
         this.status = status;
     }
 
-    public static Inquiry of(String customerId, String title, String contents, Integer status){
+    public static Inquiry of(String customerId, String title, String contents, InquiryStatus status){
         return new Inquiry(customerId, title, contents, status);
     }
 
