@@ -17,14 +17,14 @@ import java.util.Objects;
 @ToString
 @Table(indexes = {
         @Index(columnList = "contents"),
-        @Index(columnList = "createAt")
+        @Index(columnList = "regDate")
 })
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 public class InquiryAnswer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Setter
     @ManyToOne(optional = false)
@@ -36,10 +36,10 @@ public class InquiryAnswer {
     private String contents; // 답변 내용
     @CreatedDate
     @Column(nullable = false)
-    private LocalDateTime createAt; // 생성일
+    private LocalDateTime regDate; // 생성일
     @LastModifiedDate
     @Column(nullable = false)
-    private LocalDateTime updateAt; // 수정일
+    private LocalDateTime updateDate; // 수정일
 
     protected InquiryAnswer() {
     }
