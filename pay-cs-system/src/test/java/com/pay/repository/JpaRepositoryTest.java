@@ -39,7 +39,7 @@ class JpaRepositoryTest {
         List<Inquiry> inquiryList = inquiryRepository.findAll();
 
         // then
-        assertThat(inquiryList).isNotNull().hasSize(1);
+        assertThat(inquiryList).isNotNull().hasSize(4);
     }
 
     @DisplayName("insert 테스트")
@@ -50,7 +50,7 @@ class JpaRepositoryTest {
         long previousCount = inquiryRepository.count();
 
          // When
-        Inquiry savedInquiry = inquiryRepository.save(Inquiry.of("heoheon", "test","test", InquiryStatus.INQUIRY_WATTING));
+        Inquiry savedInquiry = inquiryRepository.save(Inquiry.of("heoheon", "test","test", InquiryStatus.WATTING));
 
         // Then
         assertThat(inquiryRepository.count()).isEqualTo(previousCount + 1);
@@ -62,7 +62,7 @@ class JpaRepositoryTest {
     void givenTestData_whenUpdate_thenWorksFine(){
 
         // Given
-        Inquiry savedInquiry = inquiryRepository.save(Inquiry.of("heoheon","test","test", InquiryStatus.INQUIRY_WATTING));
+        Inquiry savedInquiry = inquiryRepository.save(Inquiry.of("heoheon","test","test", InquiryStatus.WATTING));
         Inquiry inquiryUpdate = inquiryRepository.findById(savedInquiry.getId()).orElseThrow();
         String updateTitle = "제목변경";
         inquiryUpdate.setTitle(updateTitle);

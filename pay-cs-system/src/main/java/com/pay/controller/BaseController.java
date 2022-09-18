@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class BaseController {
 
-    @GetMapping("/vue")
-    public String vue(){
-        return "vue/index";
+    @GetMapping("/main")
+    public String index(){
+        return "index.html";
     }
 
 }

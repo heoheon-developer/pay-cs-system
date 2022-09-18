@@ -8,8 +8,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RepositoryRestResource
+@CrossOrigin
 public interface InquiryAnswerRepository extends
         JpaRepository<InquiryAnswer, Integer>,
         QuerydslPredicateExecutor<InquiryAnswer>

@@ -2,9 +2,9 @@ package com.pay.enums;
 
 public enum InquiryStatus {
 
-    INQUIRY_WATTING(0),
-    INQUIRY_PROGRESS(1),
-    INQUIRY_COMPLETE(2);
+    WATTING(0),
+    PROGRESS(1),
+    COMPLETE(2);
 
     private final int value;
     private InquiryStatus(int value) {
