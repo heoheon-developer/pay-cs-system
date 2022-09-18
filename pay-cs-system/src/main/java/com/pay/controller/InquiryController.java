@@ -24,32 +24,11 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/inquiry")
-@CrossOrigin(origins = "http://localhost:8080")
+@RequestMapping("/inquiries")
 public class InquiryController {
 
 
-    private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
-
-    @Autowired
-    private InquiryService inquiryService;
-
-    @GetMapping(value = "/all")
-    public ResponseEntity<Object> getInquiryList(){
-        try{
-            List<Inquiry> inquiries = inquiryService.getInquiryList();
-
-            logger.info("inquiries", inquiries.iterator());
-            return new ResponseEntity<Object>(inquiries, HttpStatus.OK);
-        } catch(Exception ex){
-            logger.error(ex.getMessage(), ex);
-            return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
-        }
 
 
-
-
-
-    }
 
 }

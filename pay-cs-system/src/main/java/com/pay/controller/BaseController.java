@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@CrossOrigin(origins = "http://localhost:8081")
-@RestController
+@Controller
 public class BaseController {
 
-    @GetMapping("/test")
-    public String root(){
-        return "test rest controller";
+    @GetMapping("/vue")
+    public String vue(){
+        return "vue/index";
     }
 
 }
