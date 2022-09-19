@@ -1,7 +1,9 @@
 package com.pay.service.Impl;
 
 import com.pay.domain.Inquiry;
-import com.pay.dto.request.InquiryDto;
+import com.pay.dto.InquiryDto;
+import com.pay.dto.request.InquiryCreateDto;
+import com.pay.enums.InquiryStatus;
 import com.pay.repository.InquiryRepository;
 import com.pay.service.InquiryService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,5 +27,14 @@ public class InquiryServiceImpl implements InquiryService {
         log.info("inquiryList == " + list);
         ModelMapper modelMapper = new ModelMapper();
         return Arrays.asList(modelMapper.map(list, InquiryDto[].class));
+    }
+
+    @Override
+    public Inquiry create(InquiryCreateDto inquiryCreateDto) {
+
+        log.debug("servbice====>", inquiryCreateDto.getContents());
+        Inquiry inquiry = Inquiry.of(inquiryCreateDto.getCustomerId(), inquiryCreateDto.getTitle(), inquiryCreateDto.getContents(), InquiryStatus.WATTING);
+
+        return inquiryRepository.save(inquiry);
     }
 }

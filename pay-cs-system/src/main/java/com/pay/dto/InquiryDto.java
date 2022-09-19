@@ -1,4 +1,4 @@
-package com.pay.dto.request;
+package com.pay.dto;
 
 import com.pay.enums.InquiryStatus;
 import lombok.Getter;

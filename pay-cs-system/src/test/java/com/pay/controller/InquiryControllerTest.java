@@ -29,7 +29,7 @@ class InquiryControllerTest {
         // Given
 
         // When & Then
-        mvc.perform(get("/inquiries"))
+        mvc.perform(get("/inquiries/list"))
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("inquiries"));
     }

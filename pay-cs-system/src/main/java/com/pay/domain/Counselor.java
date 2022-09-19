@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 
 @Getter
@@ -48,5 +49,29 @@ public class Counselor {
 
     public static Counselor of(String counselorId, String counselorPassword, String counselorName) {
         return new Counselor(counselorId, counselorPassword, counselorName);
+    }
+
+
+    public Counselor(String id, String pw){
+        this.counselorId = id;
+        this.counselorPassword = pw;
+    }
+
+    public static Counselor of(String id, String pw){
+        return new Counselor(id, pw);
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Counselor counselor = (Counselor) o;
+        return id.equals(counselor.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

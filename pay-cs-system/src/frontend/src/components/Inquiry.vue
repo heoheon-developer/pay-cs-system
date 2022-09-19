@@ -1,6 +1,5 @@
 <template>
-
-   <table>
+   <table align="center">
      <thead>
          <th>번호</th>
          <th>고객ID</th>
@@ -12,7 +11,11 @@
        <td>{{item.id}}</td>
        <td>{{item.customerId}}</td>
        <td>{{item.title}}</td>
-       <td>{{item.status}}</td>
+       <td>
+         <span v-if="item.status == 'WATTING'"> 답변대기</span>
+         <span v-else-if="item.status == 'PROGRESS'"> 답변중</span>
+         <span v-else-if="item.status == 'COMPLETE'"> 답변완료</span>
+       </td>
        <td>{{item.regDate}}</td>
      </tr>
    </table>
@@ -41,3 +44,18 @@ export default{
 }
 
 </script>
+
+
+<style scoped>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+</style>

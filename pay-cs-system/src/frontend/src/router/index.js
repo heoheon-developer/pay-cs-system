@@ -2,10 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home.vue'
 import Inquiry from '@/components/Inquiry.vue'
+import Write from '@/components/Write.vue'
+import Login from '@/components/Login.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  mode : 'history',
   routes: [
     {
       path: '/',
@@ -16,7 +19,19 @@ export default new Router({
       path : '/inquiry/list',
       name: 'Inquiry',
       component : Inquiry
+    },
+    {
+      path : '/write',
+      name : 'Write',
+      component : Write
+    },
+    {
+      path:'/login',
+      name : 'Login',
+      component : Login
     }
+
+
   ]
 
 

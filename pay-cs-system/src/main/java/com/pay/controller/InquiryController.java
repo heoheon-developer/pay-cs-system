@@ -1,7 +1,8 @@
 package com.pay.controller;
 
 import com.pay.domain.Inquiry;
-import com.pay.dto.request.InquiryDto;
+import com.pay.dto.InquiryDto;
+import com.pay.dto.request.InquiryCreateDto;
 import com.pay.service.InquiryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,16 +12,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/inquiries")
+@RequestMapping("/api/inquiry")
 @CrossOrigin
 public class InquiryController {
         @Autowired
@@ -32,4 +30,12 @@ public class InquiryController {
                 log.info("inquiryList == " + inquiryList);
                 return new ResponseEntity<List<InquiryDto>>(inquiryList, HttpStatus.OK);
         }
+
+        @PostMapping("/create")
+        public Inquiry create(@RequestBody InquiryCreateDto inquiryCreateDto){
+                log.debug("create=>>>", inquiryCreateDto);
+                return inquiryService.create(inquiryCreateDto);
+        };
+
+
 }
