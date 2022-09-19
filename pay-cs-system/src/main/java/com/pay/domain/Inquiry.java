@@ -36,7 +36,7 @@ public class Inquiry {
     @Column(nullable = false)
     private String title; // 제목
     @Setter
-    @Column(nullable = false, length = 10000)
+    @Column(nullable = false, length = 100000)
     private String contents; // 문의 내용
     // 문의 답변 바인딩
     @ToString.Exclude

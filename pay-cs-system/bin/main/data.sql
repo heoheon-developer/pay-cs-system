@@ -6,4 +6,4 @@ INSERT INTO inquiry(CUSTOMER_ID, TITLE, CONTENTS, STATUS, REG_DATE, UPDATE_DATE)
 INSERT INTO inquiry(CUSTOMER_ID, TITLE, CONTENTS, STATUS, REG_DATE, UPDATE_DATE) VALUES ('CUSTOMER4','TEST4','CONTENT TEST',1,'2022-09-15','2022-09-15');
 
 INSERT INTO inquiry_answer(contents, reg_date, update_date, counselor_id, inquiry_id) values ('test','2022-09-19','2022-09-05',1,2);
-INSERT INTO inquiry_answer(contents, reg_date, update_date, counselor_id, inquiry_id) values ('test','2022-09-19','2022-09-05',0,2)
+

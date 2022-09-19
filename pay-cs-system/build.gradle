@@ -28,6 +28,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.6'
+    implementation group: 'com.auth0', name: 'java-jwt', version: '3.16.0'
+
 
     // queryDSL 설정
     implementation "com.querydsl:querydsl-jpa"

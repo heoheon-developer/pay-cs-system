@@ -1,12 +1,9 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import mutations from "./mutations";
+import {createStore} from "vuex";
 import getters from "./getters";
+import mutations from "./mutations";
 import actions from "./actions";
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export const store = createStore({
   state: {
     user: null,
     isLogin: false,
@@ -15,4 +12,4 @@ export default new Vuex.Store({
   mutations,
   getters,
   actions
-})
+});
