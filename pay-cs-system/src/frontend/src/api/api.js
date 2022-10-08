@@ -33,6 +33,11 @@ export default {
     return axios.post('/inquiry/create',form)
   },
   async doLogin(userId, userPw) {
+
+    console.log("userId=>", userId);
+    console.log("userPw=>", userPw);
+
+
     try {
       const getUserInfoPromise = getUserInfo(userId, userPw)
       const [userInfoResponse] = await Promise.all([getUserInfoPromise])
@@ -41,6 +46,10 @@ export default {
       } else {
         localStorage.setItem('user_token', userInfoResponse.data.user_token)
         localStorage.setItem('user_role', userInfoResponse.data.user_role)
+
+        console.log("useInfoResponse", userInfoResponse)
+
+
         return userInfoResponse
       }
     } catch (err) {
@@ -49,3 +58,4 @@ export default {
   }
 
 }
+
