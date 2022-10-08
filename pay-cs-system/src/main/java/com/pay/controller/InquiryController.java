@@ -33,7 +33,7 @@ public class InquiryController {
 
         @PostMapping("/create")
         public Inquiry create(@RequestBody InquiryCreateDto inquiryCreateDto){
-                log.debug("create=>>>", inquiryCreateDto);
+                log.debug("create=>>>", inquiryCreateDto.toString());
                 return inquiryService.create(inquiryCreateDto);
         };
 
