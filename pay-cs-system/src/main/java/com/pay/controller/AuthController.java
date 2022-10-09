@@ -1,8 +1,12 @@
 package com.pay.controller;
 
+import com.pay.service.CounselorService;
+import com.pay.util.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +20,17 @@ import java.util.Map;
 @Slf4j
 public class AuthController {
 
+    private final JwtUtil jwtUtil;
+
+    private final CounselorService counselorService;
+    private final AuthenticationManager authenticationManager;
+
+    public AuthController(JwtUtil jwtUtil, CounselorService counselorService, AuthenticationManager authenticationManager) {
+        this.jwtUtil = jwtUtil;
+        this.counselorService = counselorService;
+        this.authenticationManager = authenticationManager;
+    }
+
 
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, String> paramMap) {
@@ -23,6 +38,12 @@ public class AuthController {
         String pw = paramMap.get("user_pwd");
         log.debug("id->>>>", id);
         log.debug("pw->>>>", pw);
+
+        UserDetails loginUser = counselorService.loadUserByUsername(id);
+
+
+
+
         Map<String, Object> result = new HashMap<>();
         return ResponseEntity.ok(result);
     }
