@@ -9,4 +9,6 @@ public interface CounselorRepository extends JpaRepository<Counselor, Integer> {
 
     Optional<Counselor> findCounselorByCounselorId(String id);
 
+    Optional<Counselor> findByCounselorId(String userId);
+
 }
