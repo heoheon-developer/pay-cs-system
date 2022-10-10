@@ -12,6 +12,7 @@
     "unit": "jest --config test/unit/jest.conf.js --coverage"
   },
   "dependencies": {
+    "@realgrid/vue-realgrid": "^0.2.2",
     "axios": "^0.27.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",

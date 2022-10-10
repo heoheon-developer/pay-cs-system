@@ -6,6 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,11 +43,17 @@ public class AuthController {
         log.debug("pw->>>>", pw);
 
         UserDetails loginUser = counselorService.loadUserByUsername(id);
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser, pw));
 
 
+        SecurityContextHolder.getContext().setAuthentication(authentication);
 
+        String accessToken = jwtUtil.createToken(loginUser.getUsername(), loginUser.getUsername());
 
         Map<String, Object> result = new HashMap<>();
+        result.put("user_id", loginUser.getUsername());
+        result.put("access_token", accessToken);
+        result.put("user_role", loginUser.getAuthorities().stream().findFirst().get().getAuthority());
         return ResponseEntity.ok(result);
     }
 

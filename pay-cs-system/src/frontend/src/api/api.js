@@ -16,26 +16,27 @@ const getUserInfo = (userId, userPw) => {
       'Content-type': 'application/json'
     }
   })
+
 }
 export default {
   getInquiries : function() {
     return axios.get('/inquiry/list');
-  },
-  getLogin : async function(id, passwd) {
-      return await axios.get('/login', {
-        auth: {
-          "id": id,
-          "passwd": passwd
-        }
-      });
+  // },
+  // getLogin : async function(id, passwd) {
+  //     return await axios.get('/auth/login', {
+  //       auth: {
+  //         "id": id,
+  //         "passwd": passwd
+  //       }
+  //     });
   },
   save : function(form){
     return axios.post('/inquiry/create',form)
   },
   async doLogin(userId, userPw) {
 
-    console.log("userId=>", userId);
-    console.log("userPw=>", userPw);
+    console.log("do Login=== userId=>", userId);
+    console.log("do Login=== userPw=>", userPw);
 
 
     try {
