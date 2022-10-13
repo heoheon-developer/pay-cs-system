@@ -38,12 +38,12 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, String> paramMap) {
         String id = paramMap.get("user_id");
-        String pw = paramMap.get("user_pwd");
+        String pw = paramMap.get("user_pw");
         log.debug("id->>>>", id);
         log.debug("pw->>>>", pw);
 
         UserDetails loginUser = counselorService.loadUserByUsername(id);
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser, pw));
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser, loginUser));
 
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
