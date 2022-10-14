@@ -45,10 +45,12 @@ export default {
       if (userInfoResponse.data.length === 0) {
         return 'notFound'
       } else {
-        localStorage.setItem('user_token', userInfoResponse.data.user_token)
-        localStorage.setItem('user_role', userInfoResponse.data.user_role)
 
         console.log("useInfoResponse", userInfoResponse)
+        localStorage.setItem('user_token', userInfoResponse.data.access_token)
+        localStorage.setItem('user_role', userInfoResponse.data.user_role)
+
+
 
 
         return userInfoResponse

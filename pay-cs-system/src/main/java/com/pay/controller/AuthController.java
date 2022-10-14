@@ -43,10 +43,10 @@ public class AuthController {
         log.debug("pw->>>>", pw);
 
         UserDetails loginUser = counselorService.loadUserByUsername(id);
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser, loginUser));
-
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+//        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser, loginUser));
+//
+//
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
 
         String accessToken = jwtUtil.createToken(loginUser.getUsername(), loginUser.getUsername());
 
