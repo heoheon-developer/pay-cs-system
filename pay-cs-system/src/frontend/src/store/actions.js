@@ -20,10 +20,6 @@ let setIsLogin = ({commit}, data)=>{
 
 // 백엔드에서 반환한 결과값을 가지고 로그인 성공 실패 여부를 vuex에 넣어준다.
 let processResponse = (store, loginResponse) => {
-  console.log("store==========>", store)
-  console.log("loginResponse==========>", loginResponse.data)
-
-
   switch (loginResponse) {
     case 'notFound':
       setErrorState(store, 'Wrong ID or Password')
