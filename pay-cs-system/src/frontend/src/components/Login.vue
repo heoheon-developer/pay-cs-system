@@ -21,6 +21,7 @@
 
 <script>
 import {mapActions, mapGetters} from 'vuex'
+import router from "../router";
 
 
 export default {
@@ -49,7 +50,15 @@ export default {
       try {
         let loginResult = await this.login({user_id: this.user_id, user_pw: this.user_pw})
 
-        if (loginResult) alert('로그인 결과 : ' + loginResult)
+        if (loginResult){
+
+          await router.push('/inquiry/list')
+        }
+
+
+
+
+
       } catch (err) {
         if (err.message.indexOf('Network Error') > -1) {
           alert('서버에 접속할 수 없습니다. 상태를 확인해주세요.')
