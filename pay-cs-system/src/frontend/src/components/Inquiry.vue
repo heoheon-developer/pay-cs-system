@@ -8,10 +8,10 @@
          <th>등록일</th>
          <th v-if="isLogin">상담사 지정</th>
      </thead>
-     <tr v-for="(item, index) in items" :key="index">
+     <tr v-for="(item, id) in items" :key="id">
        <td>{{item.id}}</td>
        <td>{{item.customerId}}</td>
-       <td><a v-on:clikc="detailView(`${item.index}`)">{{item.title}}</a></td>
+       <td><a v-on:click="detailView(`${item.id}`)">{{item.title}}</a></td>
        <td>
          <span v-if="item.status == 'WATTING'"> 답변대기</span>
          <span v-else-if="item.status == 'PROGRESS'"> 답변중</span>
@@ -75,6 +75,7 @@ export default{
   },
   methods:{
     detailView(idx){
+      alert(idx)
       this.requestBody.idx = idx
       this.$router.push({
         path:'./detail',
