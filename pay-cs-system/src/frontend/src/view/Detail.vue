@@ -15,7 +15,24 @@
 
 <script>
 export default {
-  name: "Detail.vue"
+  name: "Detail.vue",
+  data(){
+    return {
+      requestBody : this.$route.query,
+      idx : this.$route.query.idx,
+      title:'',
+      contents:'',
+      created_at:''
+    }
+  },
+  mounted(){
+    this.getView()
+  },
+  methods:{
+    getView(){
+      this.$axis
+    }
+  }
 }
 </script>
 
