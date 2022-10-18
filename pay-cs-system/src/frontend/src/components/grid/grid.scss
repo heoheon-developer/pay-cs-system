@@ -1,0 +1,105 @@
+@import "/src/assets/style/_icon";
+
+/*링크렌더러 하이퍼링크*/
+a:hover {
+  color : #ff8080;
+  font-weight: bold;
+}
+
+a:link {
+  color : #3887ff;
+  font-weight: bold;
+}
+
+/*선택 행 배경색*/
+.rg-focused-row{
+  background: #fff3f3;
+}
+
+/*헤더 배경색*/
+.rg-header {
+  text-align: center;
+  font-weight: bold;
+  color: #aaaaab;
+  background: #f7f8fb; }
+.rg-header .rg-table tr td.rg-header-cell , .rg-header .rg-table tr td.rg-header-group-cell {
+  border-top: none;
+  border-right:none;
+  border-left: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb ;
+  overflow: hidden; }
+.rg-header .rg-table tr td:hover {
+  background: #cdd2d9; }
+
+.rg-head .rg-table {
+  background: #f7f8fb;
+}
+
+.rg-header .rg-table tr td.rg-header-cell:first-child{
+  border-left:none;
+}
+
+.rg-header .rg-table tr td.rg-header-cell:hover{
+  background-color:#f7f8fb;
+}
+
+  // .rg-head .rg-table tr td {
+//   border-right: 1px solid #eeeeee !important;
+//   border-bottom: 1px solid #eeeeee !important;
+// }
+
+///*체크바 영역 테두리 및 배경색*/
+//.rg-rowbarcontainer .rg-table tr td {
+//  background-color: #f7f8fb !important;
+//  border-right: 1px solid #eeeeee !important;
+//  border-bottom: 1px solid #eeeeee !important;
+//}
+
+/*그리드 데이터셀 영역 테두리*/
+.rg-body .rg-table tr td.rg-data-cell, .rg-fixed-body .rg-table tr td.rg-data-cell {
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/*도형 렌더러 스타일*/
+.shape-green {
+  fill: #73d971;
+}
+
+.shape-yellow {
+  fill: #f5e400;
+}
+
+.red-color {
+  color: #ff8080;
+}
+
+/*커스텀 렌더러*/
+.custom_renderer > div {
+  display: flex;
+  align-items: center;
+}
+
+.custom_renderer .rg-renderer:hover .custom-hover {
+  visibility: visible;
+}
+
+.custom_renderer .rg-renderer .custom-hover {
+  visibility: hidden;
+}
+
+.custom_renderer .rg-renderer .custom-focused {
+  visibility: visible;
+}
+
+.custom_button {
+  height: 30px;
+  margin-left: 18%;
+  background: center center no-repeat;
+  flex: 0 0 145px;
+}
+
+/*그리드 테두리*/
+// .rg-grid {
+//   border: 1px solid #f1f1f2 !important;
+// }

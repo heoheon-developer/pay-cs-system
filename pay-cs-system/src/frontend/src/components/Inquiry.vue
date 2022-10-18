@@ -1,4 +1,5 @@
 <template>
+  <div>
    <table align="center">
      <thead>
          <th>번호</th>
@@ -21,7 +22,7 @@
        <td v-if="isLogin"><button >지정</button></td>
      </tr>
    </table>
-
+  </div>
 </template>
 <script>
 
