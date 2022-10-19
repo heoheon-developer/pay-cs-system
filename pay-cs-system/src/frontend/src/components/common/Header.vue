@@ -5,6 +5,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/write">문의 하기</router-link> |
       <router-link to="/inquiry/list">고객 상담 게시판</router-link> |
+      <router-link to="/testGrid">테스트 그리드</router-link> |
+
       <router-link to="/login" v-if="!this.$store.state.isLogin">로그인</router-link>
       <a v-if="this.$store.state.isLogin" @click="fnLogout">로그아웃</a>
     </div>

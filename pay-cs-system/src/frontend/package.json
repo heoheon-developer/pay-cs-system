@@ -16,7 +16,8 @@
     "axios": "^0.27.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.6.2"
+    "vuex": "^3.6.2",
+    "realgrid": "^2.5.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-vuex": "^5.0.8",
