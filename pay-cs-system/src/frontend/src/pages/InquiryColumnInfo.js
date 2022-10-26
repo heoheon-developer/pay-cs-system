@@ -1,54 +1,13 @@
 const productFields = [
     {
-        "fieldName": "inventoryStatus",
-        "dataType": "text"
-    },
-    {
-        "fieldName": "warehouseCode",
-        "dataType": "text"
-    },          
-    {
-        "fieldName": "warehouseName",
-        "dataType": "text"
-    },          
-    {
-        "fieldName": "skuCode",
-        "dataType": "text"
-    },          
-    {
-        "fieldName": "skuName",
-        "dataType": "text"
-    },          
-    {
-        "fieldName": "quantity",
+        "fieldName": "id",
         "dataType": "number"
     },
     {
-        "fieldName": "safetyQuantity",
-        "dataType": "number"
+    "fieldName": "customerId",
+    "dataType": "number"
     },
-    {
-        "fieldName": "availableQuantity",
-        "dataType": "number"
-    },
-    {
-        "fieldName": "unusedQuantity",
-        "dataType": "number"
-    },
-    {
-        "fieldName": "inventoryMgmt",
-        "dataType": "text"
-    },
-    {
-        "fieldName": "currentInboundedAt",
-        "dataType": "datetime",
-        "datetimeFormat": "iso"
-    },
-    {
-        "fieldName": "currentShippedAt",
-        "dataType": "datetime",
-        "datetimeFormat": "iso"
-    },
+
 ];
 
 const statusStyleMapping = {
@@ -59,12 +18,12 @@ const statusStyleMapping = {
   const statusTmpl = (status) => `<span data-v-770e7845="" class="pgr_comm ${statusStyleMapping[status]}"><span data-v-770e7845="" class="txt_pgr">${status}</span></span>`;
   const productColumns = [
     {
-      name: 'inventoryStatus',
-      fieldName: 'inventoryStatus',
+      name: 'id',
+      fieldName: 'id',
       type: 'data',
       width: '120',
       header: {
-        text: '판매상태',
+        text: '번호',
       },
       editable: false,
       renderer:{
@@ -73,119 +32,26 @@ const statusStyleMapping = {
           callback: function(grid, cell) {
               return statusTmpl(cell.value);
           }
-      }          
+      }
     },
     {
-      name: 'warehouseName',
-      fieldName: 'warehouseName',
+      name: 'customerId',
+      fieldName: 'customerId',
       type: 'data',
       width: '120',
       header: {
-        text: '물류센터',
+        text: '고객ID',
       },
       editable: false,
-    },        
-    {
-      name: 'skuCode',
-      fieldName: 'skuCode',
-      type: 'data',
-      width: '140',
-      header: {
-        text: '출고상품코드',
-      },
-      editable: false,
-    },        
-    {
-      name: 'skuName',
-      fieldName: 'skuName',
-      type: 'data',
-      width: '250',
-      header: {
-        text: '출고상품명',
-      },
-      editable: false,
-      styleName: 'rg-truncate-text',
-    },        
-    {
-      name: 'quantity',
-      fieldName: 'quantity',
-      type: 'data',
-      width: '90',
-      header: {
-        text: '총재고',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
+      renderer:{
+        type:"html",
+        inputFocusable:true,
+        callback: function(grid, cell) {
+          return statusTmpl(cell.value);
+        }
+      }
     },
-    {
-      name: 'safetyQuantity',
-      fieldName: 'safetyQuantity',
-      type: 'data',
-      width: '90',
-      header: {
-        text: '안전재고',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'availableQuantity',
-      fieldName: 'availableQuantity',
-      type: 'data',
-      width: '90',
-      header: {
-        text: '정상재고',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'unusedQuantity',
-      fieldName: 'unusedQuantity',
-      type: 'data',
-      width: '90',
-      header: {
-        text: '불량재고',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'inventoryMgmt',
-      fieldName: 'inventoryMgmt',
-      type: 'data',
-      width: '120',
-      header: {
-        text: '재고관리',
-      },
-      editable: false,
-    },
-    {
-      name: 'currentInboundedAt',
-      fieldName: 'currentInboundedAt',
-      type: 'data',
-      width: '120',
-      datetimeFormat: "yyyy.MM.dd",
-      header: {
-        text: '최근입고일',
-      },
-      editable: false,
-    },
-    {
-      name: 'currentShippedAt',
-      fieldName: 'currentShippedAt',
-      type: 'data',
-      width: '120',
-      datetimeFormat: "yyyy.MM.dd",
-      header: {
-        text: '최근출고일',
-      },
-      editable: false,
-    },
+
   ];
 
   const lotFields = [
@@ -196,19 +62,19 @@ const statusStyleMapping = {
     {
         "fieldName": "warehouseCode",
         "dataType": "text"
-    },          
+    },
     {
         "fieldName": "warehouseName",
         "dataType": "text"
-    },          
+    },
     {
         "fieldName": "skuCode",
         "dataType": "text"
-    },          
+    },
     {
         "fieldName": "skuName",
         "dataType": "text"
-    },          
+    },
     {
         "fieldName": "quantity",
         "dataType": "number"
@@ -264,7 +130,7 @@ const lotColumns = [
         text: '물류센터',
       },
       editable: false,
-    },        
+    },
     {
       name: 'skuCode',
       fieldName: 'skuCode',
@@ -274,7 +140,7 @@ const lotColumns = [
         text: '출고상품코드',
       },
       editable: false,
-    },        
+    },
     {
       name: 'skuName',
       fieldName: 'skuName',
@@ -285,7 +151,7 @@ const lotColumns = [
       },
       editable: false,
       styleName: 'rg-truncate-text',
-    },        
+    },
     {
       name: 'quantity',
       fieldName: 'quantity',
@@ -414,7 +280,7 @@ const lotColumns = [
   //   quantity: 1297.00
   // }
 
-  
+
   export default {
     productFields,
     productColumns,
