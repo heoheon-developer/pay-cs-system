@@ -24,13 +24,7 @@ export default {
   components: {TableColInput},
   data() {
     return {
-      gridColumns: [
-        {title: '번호'},
-        {title: '고객ID'},
-        {title: '제목'},
-        {title: '상태'},
-        {title: '등록일'}
-      ],
+      gridColumns: [],
       grid: null,
       tabIndex: 0,
     }
@@ -71,23 +65,7 @@ export default {
       grid.setFilters(['inventoryStatus']);
       grid.view.orderBy([]);
     },
-    // 상품별재고 목록 조회
-    async getProductList() {
-      const dto = new InventoryInquiryDTO.InventoryStatusByProductConditionQueryDTO(
-        this.params,
-      );
-      const response = await InventoryInquiryApi.FindInventoryStatusByProductListQuery.callApi(
-        dto,
-      );
-      const vo = new InventoryInquiryVO.InventoryStatusByProductConditionByViewVO(
-        response.getContents(),
-      );
-      const list = vo.infoList;
-      this.list.product = vo.infoList;
-      this.list.tab[0].value = vo.count;
-      if (this.tabIndex === 0) this.totalCount = vo.count;
-      return list;
-    },
+
 
   }
 }

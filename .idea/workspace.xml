@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6fcd7a7-5cb2-435e-9e7c-b13702624eef" name="Changes" comment="# Real Grid 설정">
-      <change afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/components/grid/TableColInput.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/table/table.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/assets/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/assets/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/components/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/components/TestGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/components/TestGrid.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/components/grid/Grid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/components/grid/Grid.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/pages/InquiryColumnInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/pages/InquiryColumnInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/store/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/frontend/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pay-cs-system/src/test/java/com/pay/repository/JpaRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pay-cs-system/src/test/java/com/pay/repository/JpaRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +86,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/workspace/pay-cs-system/pay-cs-system/src/frontend/src/table&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/workspace/pay-cs-system/pay-cs-system/src/frontend/src/assets&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -114,8 +104,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\workspace\pay-cs-system\pay-cs-system\src\frontend\src\table" />
+      <recent name="F:\workspace\pay-cs-system\pay-cs-system\src\frontend\src\assets" />
       <recent name="F:\workspace\pay-cs-system\pay-cs-system\src\frontend\src\components\grid" />
+      <recent name="F:\workspace\pay-cs-system\pay-cs-system\src\frontend\src\table" />
       <recent name="F:\workspace\pay-cs-system\pay-cs-system\src\frontend\src\pages" />
       <recent name="F:\workspace\pay-cs-system\pay-cs-system\src\frontend" />
     </key>
@@ -215,8 +206,18 @@
       <workItem from="1666571823472" duration="3274000" />
       <workItem from="1666664294574" duration="3694000" />
       <workItem from="1666678110020" duration="2373000" />
-      <workItem from="1666762514951" duration="6957000" />
+      <workItem from="1666762514951" duration="8274000" />
+      <workItem from="1666846908167" duration="7135000" />
+      <workItem from="1667532541268" duration="2016000" />
     </task>
+    <task id="LOCAL-00001" summary="# Real Grid 설정">
+      <created>1666772853605</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666772853605</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

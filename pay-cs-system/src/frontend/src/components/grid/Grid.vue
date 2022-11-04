@@ -7,7 +7,7 @@
 import {GridView, LocalDataProvider} from 'realgrid';
 
 // 로그 표시 여부
-const enableLogging = false;
+const enableLogging = true;
 
 export default {
   name: "Grid",
@@ -36,7 +36,7 @@ export default {
     setOptions(options) {
       console.warn("options",options , "defaultOptions" , defaultOptions);
       const defaultOptions = {
-        display: false,
+        display: true,
         footers: {
           visible: false,
         }, //그리드 푸터
@@ -45,7 +45,7 @@ export default {
           visible: false,
         }, //줄 번호
         stateBar: {
-          visible: true,
+          visible: false,
         }, //상태바
         paste: false, // 붙여넣기 허용 여부
       };
@@ -174,7 +174,7 @@ export default {
     _setDefaultOptions(provider, view) {
       this.setOptions({});
       this.setDisplayOptions({});
-      // this.setCheckBar(); //checkBar property
+      this.setCheckBar(); //checkBar property
       //
       // //setRowStyleCallback 개행의 상태에 따라 rowStyle을 변경
       // const setDefaultRowStyle = (grid, item) => {
@@ -270,6 +270,3 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>

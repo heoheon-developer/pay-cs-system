@@ -39,7 +39,7 @@ class JpaRepositoryTest {
         List<Inquiry> inquiryList = inquiryRepository.findAll();
 
         // then
-        assertThat(inquiryList).isNotNull().hasSize(4);
+        assertThat(inquiryList).isNotNull().hasSize(18);
     }
 
     @DisplayName("insert 테스트")

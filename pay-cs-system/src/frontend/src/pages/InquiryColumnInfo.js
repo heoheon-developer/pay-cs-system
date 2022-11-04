@@ -51,7 +51,57 @@ const statusStyleMapping = {
         }
       }
     },
-
+    {
+      name: 'title',
+      fieldName: 'title',
+      type: 'data',
+      width: '120',
+      header: {
+        text: '제목',
+      },
+      editable: false,
+      renderer:{
+        type:"html",
+        inputFocusable:true,
+        callback: function(grid, cell) {
+          return statusTmpl(cell.value);
+        }
+      }
+    },
+    {
+      name: 'status',
+      fieldName: 'status',
+      type: 'data',
+      width: '120',
+      header: {
+        text: '상태',
+      },
+      editable: false,
+      renderer:{
+        type:"html",
+        inputFocusable:true,
+        callback: function(grid, cell) {
+          return statusTmpl(cell.value);
+        }
+      }
+    },
+    {
+      name: 'regDate',
+      fieldName: 'regDate',
+      type: 'data',
+      width: '120',
+      header: {
+        text: '등록일',
+      },
+      editable: false,
+      renderer:{
+        type:"html",
+        inputFocusable:true,
+        callback: function(grid, cell) {
+          return statusTmpl(cell.value);
+        }
+      }
+    },
   ];
 
   const lotFields = [
@@ -120,154 +170,7 @@ const statusStyleMapping = {
     },
 ];
 
-const lotColumns = [
-    {
-      name: 'warehouseName',
-      fieldName: 'warehouseName',
-      type: 'data',
-      width: '120',
-      header: {
-        text: '물류센터',
-      },
-      editable: false,
-    },
-    {
-      name: 'skuCode',
-      fieldName: 'skuCode',
-      type: 'data',
-      width: '140',
-      header: {
-        text: '출고상품코드',
-      },
-      editable: false,
-    },
-    {
-      name: 'skuName',
-      fieldName: 'skuName',
-      type: 'data',
-      width: '250',
-      header: {
-        text: '출고상품명',
-      },
-      editable: false,
-      styleName: 'rg-truncate-text',
-    },
-    {
-      name: 'quantity',
-      fieldName: 'quantity',
-      type: 'data',
-      width: '90',
-      header: {
-        text: '총재고',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'safetyQuantity',
-      fieldName: 'safetyQuantity',
-      type: 'data',
-      width: '90',
-      header: {
-        text: '안전재고',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'availableQuantity',
-      fieldName: 'availableQuantity',
-      type: 'data',
-      width: '90',
-      header: {
-        text: '정상재고',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'unusedQuantity',
-      fieldName: 'unusedQuantity',
-      type: 'data',
-      width: '90',
-      header: {
-        text: '불량재고',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'productionDate',
-      fieldName: 'productionDate',
-      type: 'data',
-      width: '120',
-      datetimeFormat: "yyyy.MM.dd",
-      header: {
-        text: '제조일자',
-      },
-      editable: false,
-    },
-    {
-      name: 'expiryDate',
-      fieldName: 'expiryDate',
-      type: 'data',
-      width: '120',
-      datetimeFormat: "yyyy.MM.dd",
-      header: {
-        text: '유통기한',
-      },
-      editable: false,
-    },
-    {
-      name: 'availableDaysOfDistribution',
-      fieldName: 'availableDaysOfDistribution',
-      type: 'data',
-      width: '120',
-      header: {
-        text: '유통기한잔여일수',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'outbAvailableDaysOfDistribution',
-      fieldName: 'outbAvailableDaysOfDistribution',
-      type: 'data',
-      width: '120',
-      header: {
-        text: '유통가능일수',
-      },
-      editable: false,
-      numberFormat: "#,##0",
-      styleName: 'rg-custom-number',
-    },
-    {
-      name: 'firstInboundedDate',
-      fieldName: 'firstInboundedDate',
-      type: 'data',
-      width: '120',
-      datetimeFormat: "yyyy.MM.dd",
-      header: {
-        text: '최초입고일',
-      },
-      editable: false,
-    },
-    {
-      name: 'lotNo',
-      fieldName: 'lotNo',
-      type: 'data',
-      width: '120',
-      header: {
-        text: 'Lot. No',
-      },
-      editable: false,
-    },
-  ];
+const lotColumns = [];
 
 
   // const data = {
