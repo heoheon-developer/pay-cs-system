@@ -50,6 +50,9 @@ export default {
       try {
         let loginResult = await this.login({user_id: this.user_id, user_pw: this.user_pw})
 
+
+        console.log("loginResult====>",loginResult)
+
         if (loginResult){
 
           await router.push('/inquiry/list')

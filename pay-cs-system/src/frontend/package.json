@@ -14,10 +14,12 @@
   "dependencies": {
     "@realgrid/vue-realgrid": "^0.2.2",
     "axios": "^0.27.2",
+    "realgrid": "^2.5.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^10.3.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.6.2",
-    "realgrid": "^2.5.0"
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-vuex": "^5.0.8",
