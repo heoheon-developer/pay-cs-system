@@ -17,9 +17,7 @@ import java.util.Optional;
 
 @Service
 public class counselorServiceImpl implements CounselorService, UserDetailsService {
-
     private final CounselorRepository counselorRepository;
-
     public counselorServiceImpl(CounselorRepository counselorRepository) {
         this.counselorRepository = counselorRepository;
     }

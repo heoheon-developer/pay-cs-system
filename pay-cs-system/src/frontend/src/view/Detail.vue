@@ -30,7 +30,7 @@ export default {
   },
   methods:{
     getView(){
-      this.$axis
+      this.$axios.post()
     }
   }
 }

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {store} from '../store/store'
 
 axios.interceptors.request.use(function (config) {
   store.commit('LOADING_STATUS', true)
