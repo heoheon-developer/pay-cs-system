@@ -14,6 +14,8 @@
 </template>
 
 <script>
+
+import apiInquiry from '../api/api.js'
 export default {
   name: "Detail.vue",
   data(){
@@ -30,7 +32,9 @@ export default {
   },
   methods:{
     getView(){
-      this.$axios.post()
+      apiInquiry.getDetail(this.idx).then(res=>{
+        console.log("getView",res);
+      });
     }
   }
 }

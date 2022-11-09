@@ -37,5 +37,11 @@ public class InquiryController {
                 return inquiryService.create(inquiryCreateDto);
         };
 
+        @PostMapping("/detail")
+        public Inquiry detail(@PathVariable Long id){
+                log.debug("crete=>>>", id);
+                return null;
+        };
+
 
 }
