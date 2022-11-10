@@ -30,29 +30,26 @@ export default {
   //       }
   //     });
   },
+  getDetail:function(id){
+
+    console.log("id=========", id);
+    return axios.post('inquiry/detail/', id)
+  },
   save : function(form){
     return axios.post('/inquiry/create',form)
   },
   async doLogin(userId, userPw) {
-
     console.log("do Login=== userId=>", userId);
     console.log("do Login=== userPw=>", userPw);
-
-
     try {
       const getUserInfoPromise = getUserInfo(userId, userPw)
       const [userInfoResponse] = await Promise.all([getUserInfoPromise])
       if (userInfoResponse.data.length === 0) {
         return 'notFound'
       } else {
-
         console.log("useInfoResponse", userInfoResponse)
         localStorage.setItem('user_token', userInfoResponse.data.access_token)
         localStorage.setItem('user_role', userInfoResponse.data.user_role)
-
-
-
-
         return userInfoResponse
       }
     } catch (err) {

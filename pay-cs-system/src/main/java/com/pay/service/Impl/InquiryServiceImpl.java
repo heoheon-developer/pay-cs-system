@@ -37,4 +37,12 @@ public class InquiryServiceImpl implements InquiryService {
 
         return inquiryRepository.save(inquiry);
     }
+
+    @Override
+    public InquiryDto getDetail(Integer id) {
+
+        Inquiry inquiry = inquiryRepository.findById(id).orElseThrow(() -> new RuntimeException("상담글 찾을 수 없습니다."));
+
+        return InquiryDto.builder().contents(inquiry.getContents()).build();
+    }
 }

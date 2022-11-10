@@ -16,4 +16,6 @@ public interface InquiryService {
 
     // 문의 등록
     public Inquiry create(InquiryCreateDto inquiryCreateDto);
+
+    public InquiryDto getDetail(Integer id);
 }
