@@ -1,9 +1,6 @@
 <template>
   <div class="board-detail">
     <div class="common-buttons">
-      <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnUpdate">수정</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-red" v-on:click="fnDelete">삭제</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
     </div>
     <div class="board-contents">
       <h3>{{ title }}</h3>
@@ -17,9 +14,7 @@
       <span>{{ contents }}</span>
     </div>
     <div class="common-buttons">
-      <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnUpdate">수정</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-red" v-on:click="fnDelete">삭제</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
+
     </div>
   </div>
 </template>
@@ -37,7 +32,8 @@ export default {
       title: '',
       author: '',
       contents: '',
-      created_at: ''
+      created_at: '',
+      data:[]
     }
   },
   mounted() {
@@ -45,8 +41,12 @@ export default {
   },
   methods: {
     fnGetView() {
+
+      console.log("fnGetView")
       apiInquiry.getDetail(this.idx).then(res =>{
-        console.log("res=======", res);
+        this.title = res.data.title;
+        this.contents = res.data.contents;
+
       });
     }
     },

@@ -1,19 +1,17 @@
 package com.pay.dto;
 
 import com.pay.enums.InquiryStatus;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 
-@Getter
-@Setter
-@ToString
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class InquiryDto {
+public class InquiryDto implements Serializable {
 
     Integer id;
     String customerId;

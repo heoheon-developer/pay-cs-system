@@ -43,6 +43,10 @@ public class InquiryServiceImpl implements InquiryService {
 
         Inquiry inquiry = inquiryRepository.findById(id).orElseThrow(() -> new RuntimeException("상담글 찾을 수 없습니다."));
 
-        return InquiryDto.builder().contents(inquiry.getContents()).build();
+        return InquiryDto.builder()
+                .contents(inquiry.getContents())
+                .customerId(inquiry.getCustomerId())
+                .title(inquiry.getTitle())
+                .build();
     }
 }

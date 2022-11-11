@@ -33,7 +33,7 @@ export default {
   getDetail:function(id){
 
     console.log("id=========", id);
-    return axios.post('inquiry/detail/', id)
+    return axios.post('inquiry/detail/' + id)
   },
   save : function(form){
     return axios.post('/inquiry/create',form)

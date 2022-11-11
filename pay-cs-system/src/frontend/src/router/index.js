@@ -5,6 +5,7 @@ import Inquiry from '@/components/Inquiry.vue'
 import Write from '@/components/Write.vue'
 import Login from '@/components/Login.vue'
 import TestGrid from '@/components/TestGrid.vue'
+import Detail from '@/view/Detail.vue'
 
 Vue.use(Router)
 
@@ -35,7 +36,12 @@ export default new Router({
       path:'/testGrid',
       name: 'TestGrid',
       component: TestGrid
-    }
+    },
+  {
+    path: '/inquiry/detail',
+    name: 'Detail',
+    component: Detail,
+  },
 
 
   ]
