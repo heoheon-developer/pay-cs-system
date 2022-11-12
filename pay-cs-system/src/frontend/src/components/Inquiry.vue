@@ -76,7 +76,6 @@ export default{
   },
   methods:{
     detailView(idx){
-      alert(idx)
       this.requestBody.idx = idx
       this.$router.push({
         path:'./detail',

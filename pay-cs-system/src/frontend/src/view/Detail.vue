@@ -42,10 +42,13 @@ export default {
   methods: {
     fnGetView() {
 
-      console.log("fnGetView")
+
       apiInquiry.getDetail(this.idx).then(res =>{
+        console.log("res====", res)
         this.title = res.data.title;
         this.contents = res.data.contents;
+        this.created_at = res.data.regDate;
+
 
       });
     }

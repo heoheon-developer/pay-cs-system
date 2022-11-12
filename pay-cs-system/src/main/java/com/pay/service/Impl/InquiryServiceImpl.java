@@ -47,6 +47,7 @@ public class InquiryServiceImpl implements InquiryService {
                 .contents(inquiry.getContents())
                 .customerId(inquiry.getCustomerId())
                 .title(inquiry.getTitle())
+                .regDate(inquiry.getRegDate())
                 .build();
     }
 }
