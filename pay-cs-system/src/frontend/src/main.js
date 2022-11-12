@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store/index.js'
 import './assets/common.css'
-
+import vuetify from '@/plugins/vuetify' // path to vuetify export
 
 Vue.config.productionTip = false
 // Global Components
@@ -17,5 +17,6 @@ new Vue({
   router,
   components: { App },
   store,
+  vuetify,
   template: '<App/>'
 })
