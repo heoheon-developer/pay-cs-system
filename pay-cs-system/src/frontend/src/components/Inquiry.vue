@@ -25,8 +25,25 @@
     <!--     </tr>-->
     <!--   </table>-->
 
-    <v-data-table :headers="headers" :items="items">
+    <v-data-table :headers="headers" :items="items" loading
+                  loading-text="Loading... Please wait">
 
+<!--      <template v-slot:item.status="{item}">-->
+<!--        <v-chip :color="setStatus(item.status)" dark></v-chip>-->
+<!--      </template>-->
+
+      <template v-slot:item.title="{item}">
+        <a v-on:click="detailView(`${item.id}`)">{{item.title}}</a>
+      </template>
+
+      <template v-slot:item.status="{item}">
+             <span v-if="item.status == 'WATTING'">답변대기</span>
+             <span v-else-if="item.status == 'PROGRESS'">답변중</span>
+             <span v-else-if="item.status == 'COMPLETE'">답변완료</span>
+      </template>
+      <template v-slot:item.regDate="{item}">
+        {{ item.regDate | yyyyMMdd  }}
+      </template>
 
     </v-data-table>
   </div>
@@ -112,7 +129,12 @@ export default {
         path: './detail',
         query: this.requestBody
       })
-    }
+    },
+    isStatus (status) {
+      console.log("tatus==========", status)
+      if ( status == "PROGRESS" ) return '답변대기'
+
+    },
   }
 
 }

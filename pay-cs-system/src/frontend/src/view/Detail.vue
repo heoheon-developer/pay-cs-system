@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="board-contents">
-      <span>{{ contents }}</span>
+     <v-textarea outlined v-model="contents"></v-textarea>
     </div>
     <div class="common-buttons">
 
@@ -48,6 +48,7 @@ export default {
         this.title = res.data.title;
         this.contents = res.data.contents;
         this.created_at = res.data.regDate;
+        this.author = res.data.customerId;
 
 
       });
