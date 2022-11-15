@@ -31,10 +31,7 @@ public class InquiryServiceImpl implements InquiryService {
 
     @Override
     public Inquiry create(InquiryCreateDto inquiryCreateDto) {
-
-        log.debug("service====>", inquiryCreateDto.getContents());
         Inquiry inquiry = Inquiry.of(inquiryCreateDto.getCustomerId(), inquiryCreateDto.getTitle(), inquiryCreateDto.getContents(), InquiryStatus.WATTING);
-
         return inquiryRepository.save(inquiry);
     }
 
