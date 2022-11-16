@@ -32,6 +32,12 @@
 <!--        <v-chip :color="setStatus(item.status)" dark></v-chip>-->
 <!--      </template>-->
 
+
+      // 카운셀러 지정
+      <template v-slot:header.counselor="{headers}">
+            <span v-if="isLogin">상담사지정</span>
+      </template>
+
       <template v-slot:item.title="{item}">
         <a v-on:click="detailView(`${item.id}`)">{{item.title}}</a>
       </template>
@@ -78,6 +84,10 @@ export default {
         {
           text: '등록일',
           value: 'regDate'
+        },
+        {
+          text: '상담사지정',
+          value: 'counselor'
         }
       ],
 
