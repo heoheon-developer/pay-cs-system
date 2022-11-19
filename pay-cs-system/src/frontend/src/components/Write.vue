@@ -25,7 +25,6 @@ export default {
     return {
       requestBody: this.$route.query,
       idx: this.$route.query.idx,
-
       title: '',
       name: '',
       contents: '',
@@ -83,7 +82,6 @@ export default {
           }
         })
       } else {
-        // TODO
         this.axios.patch(this.form)
           .then((res) => {
             alert('글이 저장되었습니다.')

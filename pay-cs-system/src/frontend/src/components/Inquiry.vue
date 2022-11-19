@@ -1,37 +1,11 @@
 <template>
   <div>
-    <!--   <table align="center">-->
-    <!--     <thead>-->
-    <!--         <th>번호</th>-->
-    <!--         <th>고객ID</th>-->
-    <!--         <th>제목</th>-->
-    <!--         <th>상태</th>-->
-    <!--         <th>등록일</th>-->
-    <!--         <th v-if="isLogin">상담사 지정</th>-->
-    <!--     </thead>-->
-    <!--     <tr v-for="(item, id) in items" :key="id">-->
-    <!--       <td>{{item.id}}</td>-->
-    <!--       <td>{{item.customerId}}</td>-->
-    <!--       <td><a v-on:click="detailView(`${item.id}`)">{{item.title}}</a></td>-->
-    <!--       <td>-->
-    <!--         <span v-if="item.status == 'WATTING'"> 답변대기</span>-->
-    <!--         <span v-else-if="item.status == 'PROGRESS'"> 답변중</span>-->
-    <!--         <span v-else-if="item.status == 'COMPLETE'"> 답변완료</span>-->
-    <!--       </td>-->
-    <!--       <td>{{item.regDate | yyyyMMdd}}</td>-->
-    <!--       <td v-if="isLogin"><v-btn v-if="item.status == 'WATTING'"> 지정</v-btn>-->
-    <!--       </td>-->
-
-    <!--     </tr>-->
-    <!--   </table>-->
-
     <v-data-table :headers="headers" :items="items" loading
                   loading-text="Loading... Please wait">
 
 <!--      <template v-slot:item.status="{item}">-->
 <!--        <v-chip :color="setStatus(item.status)" dark></v-chip>-->
 <!--      </template>-->
-
 
       // 카운셀러 지정
       <template v-slot:header.counselor="{headers}">
