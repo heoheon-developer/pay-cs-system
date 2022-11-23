@@ -6,16 +6,18 @@ import router from './router'
 import store from './store/index.js'
 import './assets/common.css'
 import vuetify from '@/plugins/vuetify' // path to vuetify export
-
+import HighchartsVue from 'highcharts-vue'
 Vue.config.productionTip = false
 // Global Components
 import '@/plugins/global-components.js';
+
+Vue.use(HighchartsVue)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: { App},
   store,
   vuetify,
   template: '<App/>'
