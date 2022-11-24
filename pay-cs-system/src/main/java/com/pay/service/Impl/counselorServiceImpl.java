@@ -39,8 +39,6 @@ public class counselorServiceImpl implements CounselorService, UserDetailsServic
 
             authorities.add(new SimpleGrantedAuthority("ROLE_COUNSELOR"));
         }
-
-
         return new User(counselor.getCounselorId(), counselor.getCounselorPassword(), authorities);
     }
 }
