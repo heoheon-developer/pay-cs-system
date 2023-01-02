@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="board-contents">
-     <v-textarea outlined v-model="contents"></v-textarea>
+      <v-textarea outlined v-model="contents"></v-textarea>
     </div>
     <div class="common-buttons">
       <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnUpdate">수정</button>&nbsp;
@@ -35,7 +35,7 @@ export default {
       author: '',
       contents: '',
       created_at: '',
-      data:[]
+      data: []
     }
   },
   mounted() {
@@ -45,7 +45,7 @@ export default {
     fnGetView() {
 
 
-      apiInquiry.getDetail(this.idx).then(res =>{
+      apiInquiry.getDetail(this.idx).then(res => {
         console.log("res====", res)
         this.title = res.data.title;
         this.contents = res.data.contents;
@@ -54,7 +54,6 @@ export default {
 
 
       });
-    }
     },
     fnList() {
       delete this.requestBody.idx
@@ -71,7 +70,9 @@ export default {
     },
     fnDelete() {
 
+    }
   }
+
 }
 </script>
 <style scoped>
