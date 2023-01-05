@@ -19,6 +19,8 @@ import InquiryColumnInfo from "../pages/InquiryColumnInfo";
 
 import TableColInput from "./grid/TableColInput";
 
+import apiInquiry from '../api/api.js'
+
 export default {
   name: "TestGrid.vue",
   components: {TableColInput},
@@ -27,6 +29,7 @@ export default {
       gridColumns: [],
       grid: null,
       tabIndex: 0,
+      items:[],
     }
   },
   methods: {
@@ -46,12 +49,13 @@ export default {
       this.grid = grid;
       // grid.setFields(InquiryColumnInfo.productFields);
       grid.setColumns(InquiryColumnInfo.productColumns);
-      // grid.view.displayOptions.fitStyle = 'even';
-      // const rows = await this.getProductList();
-      // // grid.setRows(rows);
-      // grid.setCheckBar({showAll: true});
+      grid.view.displayOptions.fitStyle = 'even';
+      const res = await apiInquiry.getInquiries();
+      console.log("res.data", res.data)
+      grid.setRows(res.data);
+      grid.setCheckBar({showAll: true});
       // grid.setFilters(['inventoryStatus', 'inventoryMgmt']);
-      // grid.view.orderBy([]);
+      grid.view.orderBy([]);
     },
     // 그리드 세팅
     async setLotGrid(grid) {
