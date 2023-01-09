@@ -20,6 +20,7 @@ import InquiryColumnInfo from "../pages/InquiryColumnInfo";
 import TableColInput from "./grid/TableColInput";
 
 import apiInquiry from '../api/api.js'
+import {GridView, LocalDataProvider} from "realgrid";
 
 export default {
   name: "TestGrid.vue",
@@ -30,7 +31,13 @@ export default {
       grid: null,
       tabIndex: 0,
       items:[],
+      provider:null,
     }
+  },
+  mounted() {
+
+    const provider = new LocalDataProvider(false);
+    this.provider = provider;
   },
   methods: {
     // 현재 선택한 탭에 맞는 그리드 세팅
@@ -49,19 +56,15 @@ export default {
       this.grid = grid;
 
       const fields = InquiryColumnInfo.productFields;
-
       const columns = InquiryColumnInfo.productColumns;
 
-      console.log("fields", fields)
-      console.log("columns", columns)
-
-      grid.dataProvider.setFields(fields)
-      grid.dataProvider.setColumns(columns)
-
-
-
+      grid.provider.setFields(fields)
+      grid.view.setColumns(columns)
       grid.view.displayOptions.fitStyle = 'even';
       const res = await apiInquiry.getInquiries();
+
+      console.log("red", res)
+
       grid.provider.setRows(res.data);
       grid.setCheckBar({showAll: true});
       // grid.setFilters(['inventoryStatus', 'inventoryMgmt']);
