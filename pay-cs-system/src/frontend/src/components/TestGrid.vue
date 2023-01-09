@@ -45,14 +45,24 @@ export default {
     async setProductGrid(grid) {
       console.log("그리드 세팅", grid)
 
-      console.log("get Columens", grid.getColumns() )
+
       this.grid = grid;
-      // grid.setFields(InquiryColumnInfo.productFields);
-      grid.setColumns(InquiryColumnInfo.productColumns);
+
+      const fields = InquiryColumnInfo.productFields;
+
+      const columns = InquiryColumnInfo.productColumns;
+
+      console.log("fields", fields)
+      console.log("columns", columns)
+
+      grid.dataProvider.setFields(fields)
+      grid.dataProvider.setColumns(columns)
+
+
+
       grid.view.displayOptions.fitStyle = 'even';
       const res = await apiInquiry.getInquiries();
-      console.log("res.data", res.data)
-      grid.setRows(res.data);
+      grid.provider.setRows(res.data);
       grid.setCheckBar({showAll: true});
       // grid.setFilters(['inventoryStatus', 'inventoryMgmt']);
       grid.view.orderBy([]);

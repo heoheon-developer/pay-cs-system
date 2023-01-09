@@ -7,6 +7,18 @@ const productFields = [
     "fieldName": "customerId",
     "dataType": "number"
     },
+  {
+    "fieldName": "title",
+    "dataType": "text"
+  },
+  {
+    "fieldName": "status",
+    "dataType": "text"
+  },
+  {
+    "fieldName": "regDate",
+    "dataType": "date"
+  },
 
 ];
 
