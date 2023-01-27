@@ -50,25 +50,20 @@ export default {
 
     // 그리드 세팅
     async setProductGrid(grid) {
-      console.log("그리드 세팅", grid)
-
-
       this.grid = grid;
-
       const fields = InquiryColumnInfo.productFields;
       const columns = InquiryColumnInfo.productColumns;
-
       grid.provider.setFields(fields)
       grid.view.setColumns(columns)
       grid.view.displayOptions.fitStyle = 'even';
       const res = await apiInquiry.getInquiries();
 
-      console.log("red", res)
+      console.log("res", res.data)
 
       grid.provider.setRows(res.data);
       grid.setCheckBar({showAll: true});
       // grid.setFilters(['inventoryStatus', 'inventoryMgmt']);
-      grid.view.orderBy([]);
+      // grid.view.orderBy([]);
     },
     // 그리드 세팅
     async setLotGrid(grid) {
