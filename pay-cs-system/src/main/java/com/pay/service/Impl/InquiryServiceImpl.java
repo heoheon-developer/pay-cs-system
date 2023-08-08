@@ -23,7 +23,7 @@ public class InquiryServiceImpl implements InquiryService {
 
     @Override
     public List<InquiryDto> findAll() {
-        List<Inquiry> list = this.inquiryRepository.findAll();
+        List<Inquiry> list = this.inquiryRepository.findAllByOrderByUpdateDateDesc();
         ModelMapper modelMapper = new ModelMapper();
         return Arrays.asList(modelMapper.map(list, InquiryDto[].class));
     }

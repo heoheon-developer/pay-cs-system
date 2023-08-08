@@ -3,7 +3,6 @@ package com.pay.repository;
 import com.pay.domain.Inquiry;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -16,5 +15,5 @@ public interface InquiryRepository extends
         JpaRepository<Inquiry, Integer>,
         QuerydslPredicateExecutor<Inquiry>
 {
-    public List<Inquiry> findAll();
+    public List<Inquiry> findAllByOrderByUpdateDateDesc();
 }

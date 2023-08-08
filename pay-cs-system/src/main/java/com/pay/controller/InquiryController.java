@@ -28,7 +28,7 @@ public class InquiryController {
         public ResponseEntity<List<InquiryDto>> inquiries(Model model) {
                 List<InquiryDto> inquiryList = this.inquiryService.findAll();
                 log.info("inquiryList == " + inquiryList);
-                return new ResponseEntity<List<InquiryDto>>(inquiryList, HttpStatus.OK);
+                return new ResponseEntity<>(inquiryList, HttpStatus.OK);
         }
 
         @PostMapping("/create")
