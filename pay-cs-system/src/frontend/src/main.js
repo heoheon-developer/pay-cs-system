@@ -1,24 +1,29 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import store from './store/index.js'
-import './assets/common.css'
-import vuetify from '@/plugins/vuetify' // path to vuetify export
-import HighchartsVue from 'highcharts-vue'
-Vue.config.productionTip = false
+import Vue from "vue";
+import App from "./App";
+import router from "./router";
+import store from "./store/index.js";
+import "./assets/common.css";
+import vuetify from "@/plugins/vuetify"; // path to vuetify export
+import HighchartsVue from "highcharts-vue";
+Vue.config.productionTip = false;
 // Global Components
-import '@/plugins/global-components.js';
+import "@/plugins/global-components.js";
 
-Vue.use(HighchartsVue)
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+
+Vue.use(HighchartsVue);
+
+Vue.use(ElementUI);
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
-  components: { App},
+  components: { App },
   store,
   vuetify,
-  template: '<App/>'
-})
+  template: "<App/>"
+});

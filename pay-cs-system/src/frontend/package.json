@@ -14,6 +14,7 @@
   "dependencies": {
     "@realgrid/vue-realgrid": "^0.2.2",
     "axios": "^0.27.2",
+    "element-ui": "^2.15.14",
     "highcharts": "^10.3.1",
     "highcharts-vue": "^1.4.0",
     "realgrid": "^2.5.0",
